@@ -1,0 +1,44 @@
+.container {
+  padding: 4rem 20%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgba($color: #fff, $alpha: 0.8);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  font-style: italic;
+  margin-bottom: 0;
+  @media (max-width: 724px) {
+    font-size: 1.4rem;
+  }
+}
+
+.subtitle {
+  font-weight: 100;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.divider {
+  margin: 10px 0 10px 0;
+  opacity: 0.3;
+}
+
+.creditSection {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  opacity: 0.7;
+  margin-top: 15px;
+}
