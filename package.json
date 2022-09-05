@@ -3,5 +3,13 @@
   "workspaces": [
     "web",
     "teal-hawk"
-  ]
+  ],
+  "scripts": {
+    "start:web": "cd web && yarn dev",
+    "start:studio": "cd studio && yarn start",
+    "start": "concurrently --names \"studio,web\" -c \"magenta.bold,green.bold\" --prefix \"{name}-{index}\" \"yarn start:studio\" \"yarn start:web\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0"
+  }
 }
