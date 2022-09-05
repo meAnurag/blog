@@ -8,7 +8,11 @@ const SanityImage = ({ asset, alt }) => {
 
   if (!imageProps) return null;
 
-  return <Image alt={alt} {...imageProps} />;
+  return (
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <Image alt={alt} {...imageProps} />
+    </div>
+  );
 };
 
 SanityImage.defaultProps = {

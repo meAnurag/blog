@@ -6,7 +6,9 @@ const Code = ({ code }) => {
   return (
     <div
       className={styles.container}
-      dangerouslySetInnerHTML={{ __html: `<pre>${code}</pre>` }}
+      dangerouslySetInnerHTML={{
+        __html: `<pre class=${styles.code}>${code}</pre>`,
+      }}
     />
   );
 };

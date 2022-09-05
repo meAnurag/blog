@@ -1,15 +1,15 @@
 import { useNextSanityImage } from "next-sanity-image";
 import { PortableText } from "@portabletext/react";
+import Head from "next/head";
 import Image from "next/image";
 import hljs from "highlight.js";
 import client from "../../sanityClient";
 
 import styles from "../../styles/post.module.scss";
 import { portableTextComponents } from "../../config/PortableTextConfig";
+import { GrStatusPlaceholderSmall } from "react-icons/gr";
 
 const Post = ({ post }) => {
-  console.log(post);
-
   const image = useNextSanityImage(client, post.cover);
 
   const authorImage = useNextSanityImage(client, post.author.image);
@@ -24,6 +24,9 @@ const Post = ({ post }) => {
 
   return (
     <article className={styles.container}>
+      <Head>
+        <title>{post.title}</title>
+      </Head>
       <h1 className={styles.title}>{post.title}</h1>
 
       <div className={styles.subtitle}>
@@ -32,7 +35,7 @@ const Post = ({ post }) => {
       </div>
       <hr className={styles.divider} />
 
-      <Image {...image} alt="cover" />
+      <Image {...image} alt="cover" height={800} style={{ zIndex: "-1" }} />
 
       <PortableText value={post.body} components={portableTextComponents} />
 
@@ -80,8 +83,6 @@ export const getServerSideProps = async (context) => {
     post = post[0];
 
     const codeIndexs = [];
-
-    console.log(post.body, typeof post.body);
 
     post.body.forEach((block, i) => {
       if (block._type === "code") codeIndexs.push(i);

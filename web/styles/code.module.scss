@@ -5,5 +5,19 @@
   width: 80%;
   font-family: monospace;
   border-radius: 6px;
-  box-shadow: inset 1px 1px gold;
+  // box-shadow: inset 1px 1px gold;
+  overflow: scroll;
+
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 724px) {
+    width: 95%;
+  }
+}
+
+.code {
+  line-height: 20px;
 }
