@@ -8,9 +8,18 @@ import post from "./post";
 import author from "./author";
 import blockContent from "./blockContent";
 import category from "./category";
+import user from "./user";
+import account from "./account";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   name: "default",
-  types: schemaTypes.concat([post, author, blockContent, category]),
+  types: schemaTypes.concat([
+    post,
+    author,
+    blockContent,
+    category,
+    user,
+    account,
+  ]),
 });
