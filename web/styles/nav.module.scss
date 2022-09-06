@@ -14,6 +14,10 @@ $navWidth: 60px;
   box-shadow: 0px 1px 4px 0px rgba(255, 255, 255, 0.2);
   height: 60px;
   transition: all 500ms ease;
+
+  @media (min-width: 724px) {
+    display: none;
+  }
 }
 
 .title {
@@ -36,7 +40,7 @@ $navWidth: 60px;
   position: fixed;
   z-index: 1000;
   display: flex;
-  gap: 100px;
+  gap: 35px;
   flex-direction: column;
   align-items: center;
   backdrop-filter: blur(15px);
@@ -46,8 +50,9 @@ $navWidth: 60px;
   transition: all 500ms ease;
 
   @media (max-width: 724px) {
+    width: 80vw;
     scale: 0 1;
-    translate: calc($navWidth * -1) 0;
+    translate: calc(100vw * -1) 0;
   }
 }
 
@@ -81,10 +86,23 @@ $navWidth: 60px;
   }
 }
 
+.desktop_only {
+  @media (max-width: 724px) {
+    display: none;
+  }
+}
+
+.mobile_only {
+  display: none;
+  @media (max-width: 724px) {
+    display: block;
+  }
+}
+
 .whiteRegion_visible {
   @media (max-width: 724px) {
     scale: 1 1;
-    translate: 60px 0;
+    translate: 80vw 0;
     z-index: 999;
     opacity: 1;
   }
@@ -97,11 +115,24 @@ $navWidth: 60px;
 }
 
 .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 600;
+  gap: 10px;
   color: white;
   letter-spacing: 0.5px;
   cursor: pointer;
+
+  &:nth-child(0) {
+    margin-top: 60px !important;
+  }
 }
 
 .itemIcon {
   fill: white;
+}
+
+.logOutIcon {
+  color: red;
 }

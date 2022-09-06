@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
 
-import client from "../sanityClient";
+import client from "../config/sanityClient";
 
 const SanityImage = ({ asset, alt }) => {
   const imageProps = useNextSanityImage(client, asset);

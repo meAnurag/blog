@@ -3,7 +3,7 @@ import { PortableText } from "@portabletext/react";
 import Head from "next/head";
 import Image from "next/image";
 import hljs from "highlight.js";
-import client from "../../sanityClient";
+import client from "../../config/sanityClient";
 
 import styles from "../../styles/post.module.scss";
 import { portableTextComponents } from "../../config/PortableTextConfig";

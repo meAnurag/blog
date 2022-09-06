@@ -13,6 +13,7 @@
     "@sanity/client": "^3.3.6",
     "highlight.js": "^11.6.0",
     "next": "12.2.5",
+    "next-auth-sanity": "^1.4.4",
     "next-sanity-image": "^4.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
