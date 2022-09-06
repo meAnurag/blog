@@ -29,7 +29,11 @@ const Nav = () => {
         </span>
 
         <Link href="/">
-          <a className={styles.item} onClick={() => setNavOpen(false)}>
+          <a
+            data-title="Home"
+            className={styles.item}
+            onClick={() => setNavOpen(false)}
+          >
             <GrHomeRounded className={styles.itemIcon} size={20} scale={1} />
             <span className={styles.mobile_only}>Home</span>
           </a>
@@ -38,13 +42,14 @@ const Nav = () => {
           <Link href="/">
             <a
               className={styles.item}
+              data-title="Sign out"
               onClick={() => {
                 signOut();
                 setNavOpen(false);
               }}
             >
               <IoLogOutOutline
-                className={styles.logOutIcon}
+                className={`${styles.itemIcon} ${styles.logOutIcon}`}
                 size={20}
                 scale={1}
                 color="red"
@@ -55,7 +60,11 @@ const Nav = () => {
           </Link>
         ) : (
           <Link href="/auth/signin">
-            <a className={styles.item} onClick={() => setNavOpen(false)}>
+            <a
+              data-title="Sign In"
+              className={styles.item}
+              onClick={() => setNavOpen(false)}
+            >
               <IoLogIn className={styles.itemIcon} size={20} scale={1} />
               <span className={styles.mobile_only}>Log In</span>
             </a>
