@@ -1,0 +1,50 @@
+$size: 15px;
+
+.box {
+  width: $size;
+  height: $size;
+  transition: all 400ms ease;
+
+  position: relative;
+  div {
+    transition: all 400ms ease;
+    border-radius: 6px;
+    background: white;
+    width: $size;
+    height: 3px;
+    position: absolute;
+    &:nth-child(1) {
+      top: 0;
+      left: 0;
+    }
+    &:nth-child(2) {
+      top: calc(50% - 2px);
+      left: 0;
+    }
+    &:nth-child(3) {
+      top: calc(100% - 4px);
+      left: 0;
+    }
+  }
+}
+
+.active {
+  div {
+    &:nth-child(1) {
+      transform-origin: top left;
+      rotate: 45deg;
+      translate: 0.5px 0px;
+      width: calc(1.41421356237 * $size);
+    }
+    &:nth-child(2) {
+      scale: 0;
+      translate: 0px -100px;
+    }
+    &:nth-child(3) {
+      transform-origin: bottom left;
+      rotate: -45deg;
+      translate: 0 3px;
+      width: calc(1.41421356237 * $size);
+    }
+  }
+}

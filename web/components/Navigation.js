@@ -6,6 +6,7 @@ import { IoLogIn, IoLogOutOutline } from "react-icons/io5";
 import { useSession, signOut } from "next-auth/react";
 
 import styles from "../styles/nav.module.scss";
+import Hamburger from "./Hamburger";
 
 const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -16,10 +17,9 @@ const Nav = () => {
     <>
       <header className={styles.header}>
         <span className={styles.title}>Polar</span>
-        <BiMenu
-          size={20}
+        <Hamburger
+          active={navOpen}
           onClick={() => setNavOpen((state) => !state)}
-          className={styles.burgerMenu}
         />
       </header>
       <nav className={`${styles.nav} ${navOpen ? styles.mobile_navOpen : ""}`}>
